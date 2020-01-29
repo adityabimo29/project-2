@@ -15,7 +15,10 @@ export default class Profile extends Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
+      item1: [],
+      item2: [],
+      item3: []
     };
   }
 
@@ -23,18 +26,35 @@ export default class Profile extends Component {
     this.getData();
   }
 
-  getData = () => {
-    axios.get("https://api.github.com/users").then(response => {
-      const data = response.data;
-      this.setState({ data });
-    });
+  getData = async () => {
+    const data1 = await axios.get("https://api.github.com/users/inanuriy")
+    const data2 = await  axios.get("https://api.github.com/users/adityabimo29")
+    const data3 = await  axios.get("https://api.github.com/users/indrasurya2019")
+    // axios
+    //   .all([
+    //     axios.get("https://api.github.com/users/inanuriy"),
+    //     axios.get("https://api.github.com/users/adityabimo29"),
+    //     axios.get("https://api.github.com/users/indrasurya2019")
+    //   ])
+    //   .then(axios.spread((item1, item2, item3) => {
+    //     this.setState({item1})
+    //     this.setState({item2})
+    //     this.setState({item3})
+    //   }))
+
+    this.setState({item1: data1.data})
+    this.setState({item2: data2.data})
+    this.setState({item3: data3.data})
   };
 
   render() {
-    const { data } = this.state;
+    const { data,item1,item2,item3 } = this.state;console.log(item1, item2, item3)    
+
     return (
       <div>
-        <h1 style={{ textAlign: "center", margin:"10px"}}>GET PROFILE FROM GITHUB</h1>
+        <h1 style={{ textAlign: "center", margin: "10px" }}>
+          GET PROFILE FROM GITHUB
+        </h1>
         <Container
           fluid={true}
           style={{
@@ -44,20 +64,66 @@ export default class Profile extends Component {
             justifyContent: "center"
           }}
         >
-          {data.map((item, index) => (
-            <Card key={index} style={{ width: "200px", alignItems: "center", margin:"5px"}}>
-              <CardImg
-                top
-                width="100%"
-                src={item.avatar_url}
-                alt="Card image cap"
-              />
-              <CardBody>
-                <CardTitle style={{textAlign: "center"}}>{item.login}</CardTitle>
-                <CardSubtitle style={{textAlign: "center"}}>{item.id}</CardSubtitle>
-              </CardBody>
-            </Card>
-          ))}
+          <Card style={{width: "400px", alignItems: "center"}}>
+            <CardImg
+              top
+              width="100%"
+              src={item1.avatar_url}
+              alt="Card image cap"
+            />
+            <CardBody>
+              <h3 style={{ textAlign: "center" }}>{item1.name}</h3>
+              <CardTitle style={{ textAlign: "center" }}>
+                {item1.login}
+              </CardTitle>
+              <CardSubtitle style={{ textAlign: "center" }}>
+                {item1.id}
+              </CardSubtitle>
+              <CardSubtitle style={{ textAlign: "center" }}>
+                {item1.url}
+              </CardSubtitle>
+            </CardBody>
+          </Card>
+          <Card style={{width: "400px", alignItems: "center"}}>
+            <CardImg
+              top
+              width="100%"
+              src={item2.avatar_url}
+              alt="Card image cap"
+            />
+            <CardBody>
+              <h3 style={{ textAlign: "center" }}>{item2.name}</h3>
+              <CardTitle style={{ textAlign: "center" }}>
+                {item2.login}
+              </CardTitle>
+              <CardSubtitle style={{ textAlign: "center" }}>
+                {item2.id}
+              </CardSubtitle>
+              <CardSubtitle style={{ textAlign: "center" }}>
+                {item2.url}
+              </CardSubtitle>
+            </CardBody>
+          </Card>
+          <Card style={{width: "400px", alignItems: "center"}}>
+            <CardImg
+              top
+              width="100%"
+              src={item3.avatar_url}
+              alt="Card image cap"
+            />
+            <CardBody>
+              <h3 style={{ textAlign: "center" }}>{item3.name}</h3>
+              <CardTitle style={{ textAlign: "center" }}>
+                {item3.login}
+              </CardTitle>
+              <CardSubtitle style={{ textAlign: "center" }}>
+                {item3.id}
+              </CardSubtitle>
+              <CardSubtitle style={{ textAlign: "center" }}>
+                {item3.url}
+              </CardSubtitle>
+            </CardBody>
+          </Card>
         </Container>
       </div>
     );

@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const items = [
   {
-    src: 'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: 'https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
@@ -22,7 +22,7 @@ const items = [
     caption: 'Slide 2'
   },
   {
-    src: 'https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: 'https://images.pexels.com/photos/374811/pexels-photo-374811.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
@@ -63,13 +63,13 @@ const Home = (props) => {
   });
   return (
     <div>
-      <h1>Lockheed Second Team Project</h1>
+      <h1 style={{textAlign: "center"}}>Lockheed Second Team Project</h1>
       <Carousel
       activeIndex={activeIndex}
       next={next}
       previous={previous}
     >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} style={{height: "100px"}} />
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
       {slides}
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
