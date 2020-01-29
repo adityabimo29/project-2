@@ -5,23 +5,24 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+  CarouselCaption,
+  Container
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const items = [
   {
-    src: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    src: 'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: 'https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    src: 'https://images.pexels.com/photos/2563129/pexels-photo-2563129.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 2',
     caption: 'Slide 2'
   },
   {
-    src: 'https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: 'https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
@@ -68,13 +69,11 @@ const Home = (props) => {
       next={next}
       previous={previous}
     >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} style={{height: "100px"}} />
       {slides}
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
-  );
-}
     </div>
   );
 }

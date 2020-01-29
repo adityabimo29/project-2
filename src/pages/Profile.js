@@ -31,18 +31,21 @@ export default class Profile extends Component {
   };
 
   render() {
+    const { data } = this.state;
     return (
       <div>
-        <h1>GET PROFILE FROM GITHUB</h1>
+        <h1 style={{ textAlign: "center", margin:"10px"}}>GET PROFILE FROM GITHUB</h1>
         <Container
+          fluid={true}
           style={{
             display: "flex",
             flexDirection: "row",
-            flexWrap: "wrap"
+            flexWrap: "wrap",
+            justifyContent: "center"
           }}
         >
           {data.map((item, index) => (
-            <Card key={index} style={{ width: "200px", alignItems: "center" }}>
+            <Card key={index} style={{ width: "200px", alignItems: "center", margin:"5px"}}>
               <CardImg
                 top
                 width="100%"
@@ -50,10 +53,8 @@ export default class Profile extends Component {
                 alt="Card image cap"
               />
               <CardBody>
-                <CardTitle>{item.login}</CardTitle>
-                <CardSubtitle>{item.id}</CardSubtitle>
-                <CardSubtitle>{item.followers_url}</CardSubtitle>
-
+                <CardTitle style={{textAlign: "center"}}>{item.login}</CardTitle>
+                <CardSubtitle style={{textAlign: "center"}}>{item.id}</CardSubtitle>
               </CardBody>
             </Card>
           ))}
