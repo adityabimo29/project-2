@@ -7,7 +7,6 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
 } from "reactstrap";
 
 export default class Profile extends Component {
@@ -15,7 +14,6 @@ export default class Profile extends Component {
     super(props);
 
     this.state = {
-      data: [],
       item1: [],
       item2: [],
       item3: []
@@ -48,7 +46,7 @@ export default class Profile extends Component {
   };
 
   render() {
-    const { data,item1,item2,item3 } = this.state;console.log(item1, item2, item3)    
+    const { item1,item2,item3 } = this.state;console.log(item1, item2, item3)    
 
     return (
       <div>

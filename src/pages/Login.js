@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input,Container } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
@@ -16,14 +16,12 @@ class Login extends React.Component {
     //jika handlenya lebih dari satu maka sebaiknya di masing input dibaut
     //proprety name ,setelahnya setStatenya event.target.name mewakili semua
     //nama2 input
-    console.log(this.state.name);
     console.log(this.state.email);
     console.log(this.state.password);
   };
   handleSubmit = event => {
     event.preventDefault();
     const user = {
-      name: this.state.name,
       email: this.state.email,
       password: this.state.password
     };
@@ -35,19 +33,18 @@ class Login extends React.Component {
     console.log('this is user:', user);
     if (userSave == null) {
       alert('you arent registered yet');
-      this.props.history.push('/Register');
+      this.props.history.push('/register');
     } else if (
-      user.name === userSave.name &&
       user.email === userSave.email &&
       user.password === userSave.password
     ) {
       localStorage.setItem('status', true);
 
-      alert('You can access Profile Page');
-      this.props.history.push('/PageProfile');
+      alert('Access Accepted.');
+      this.props.history.push('/profile');
+      window.location.reload();
     } else {
-      alert('email and password wrong,please Register');
-      this.props.history.push('/Register');
+      alert('email and password wrong');
     }
   };
 
@@ -55,24 +52,11 @@ class Login extends React.Component {
     console.log(this.props);
 
     return (
+      <Container className='mt-4'>
       <Row>
-        <Col lg={4}></Col>
-
-        <Col lg={4} className='MyMiddleCol'>
-          <div>
-            <h3 style={{ textAlign: 'center' }}>Please SignIn :</h3>
+          <Col lg={{size:4,offset:4}} style={{backgroundColor:"#64b5f6",padding:"10px"}}>
             <Form onSubmit={this.handleSubmit}>
-              <FormGroup>
-                <Label for='Name'>Name</Label>
-                <Input
-                  type='text'
-                  name='name'
-                  id='Name'
-                  placeholder='Please Your Complete Name'
-                  onChange={this.handleChange}
-                  value={this.state.name}
-                />
-              </FormGroup>
+              <h3 className='text-center'>Login Form:</h3>
               <FormGroup>
                 <Label for='exampleEmail'>Email</Label>
                 <Input
@@ -98,13 +82,11 @@ class Login extends React.Component {
                 />
               </FormGroup>
 
-              <Button style={{ margin: '7px' }}>Submit</Button>
+              <Button className='mt-2' color="success">Register</Button>
             </Form>
-          </div>
-        </Col>
-
-        <Col lg={4}></Col>
+          </Col>
       </Row>
+      </Container>
     );
   }
 }

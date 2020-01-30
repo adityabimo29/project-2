@@ -6,11 +6,13 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import MainNavBar from './components/MainNavBar';
-import PageProfile from './pages/PageProfile';
+import Navbar from './component/NavBar';
 import Register from './pages/Register';
-import SignIn from './pages/SignIn';
-import PageHome from './pages/PageHome';
+import SignIn from './pages/Login';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Api from './pages/Api';
+import Free from './pages/Free';
 
 function App() {
   const isLogin = JSON.parse(localStorage.getItem('status'));
@@ -18,21 +20,24 @@ function App() {
   return (
     <div>
       <Router>
-        <MainNavBar />
+        <Navbar />
         <Switch>
-          <Route exact path='/PageHome'>
-            <PageHome />
+          <Route exact path='/'>
+            <Home />
           </Route>
-          <Route exact path='/PageProfile'>
-            <PageProfile />
+          <Route  path='/Profile'>
+          {isLogin ? <Profile /> : <Redirect to='/' />}
           </Route>
-          <Route exact path='/PageProfile'>
-            {isLogin ? <PageProfile /> : <Redirect to='/PageAbout' />}
+          <Route  path='/Api'>
+            {isLogin ? <Api /> : <Redirect to='/' />}
           </Route>
-          <Route exact path='/SignIn'>
+          <Route  path='/Free'>
+            {isLogin ? <Free /> : <Redirect to='/' />}
+          </Route>
+          <Route  path='/Login'>
             <SignIn />
           </Route>
-          <Route exact path='/Register'>
+          <Route  path='/Register'>
             <Register />
           </Route>
         </Switch>

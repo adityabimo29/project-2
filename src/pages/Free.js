@@ -20,7 +20,7 @@ export default function Free() {
     //https://api.thecatapi.com/v1/images/search?size=full
 
     function fetchData() {
-              axios.get(`https://api.unsplash.com/photos/?client_id=ac15aa4270184c8ad75db8412ee57d42f779c9079ad53d0c7be4f870f20353af`)
+              axios.get(`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_API_KEY}`)
                 .then(response => {
                     if(response.status === 200){
                         const datas = response.data;

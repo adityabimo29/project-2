@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { 
-  Button,
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-  Container
+  Container,
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -62,7 +61,7 @@ const Home = (props) => {
     );
   });
   return (
-    <div>
+    <Container>
       <h1 style={{textAlign: "center"}}>Lockheed Second Team Project</h1>
       <Carousel
       activeIndex={activeIndex}
@@ -74,7 +73,7 @@ const Home = (props) => {
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
-    </div>
+    </Container>
   );
 }
 

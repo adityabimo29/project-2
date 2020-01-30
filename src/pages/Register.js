@@ -1,6 +1,7 @@
 import React from 'react';
-import { Col, Button, Form, FormGroup, Label, Input, Row } from 'reactstrap';
-export default class Login extends React.Component {
+import { Col, Button, Form, FormGroup, Label, Input, Row, Container } from 'reactstrap';
+import { withRouter } from 'react-router';
+class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,19 +26,18 @@ export default class Login extends React.Component {
 
     if (name !== '' && email !== '' && password !== '') {
       localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('status', false);
+      alert('register success');
+      this.props.history.push('/login');
     }
   };
 
   render() {
     return (
+      <Container className='mt-4'>
       <Row>
-        <Col lg={4}></Col>
-
-        <div className='MyMiddleCol'>
-          <Col lg={4}>
+          <Col lg={{size:4,offset:4}} style={{backgroundColor:"#64b5f6",padding:"10px"}}>
             <Form onSubmit={this.handleSubmit}>
-              <h3 style={{ textAlign: 'center' }}>Please Register:</h3>
+              <h3 className='text-center'>Please Register:</h3>
               <FormGroup>
                 <Label for='Name'>Name</Label>
                 <Input
@@ -74,15 +74,13 @@ export default class Login extends React.Component {
                 />
               </FormGroup>
 
-              <Button style={{ margin: '7px' }}>Submit</Button>
+              <Button className='mt-2' color="success">Register</Button>
             </Form>
           </Col>
-        </div>
-
-        <Col lg={4}></Col>
       </Row>
+      </Container>
     );
   }
 }
 
-//https://reacttraining.com/
+export default withRouter(Register);
