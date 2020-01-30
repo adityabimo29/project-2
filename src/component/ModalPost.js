@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody,  } from 'reactstrap';
 import { useFormik } from "formik";
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 const ModalPost = (props) => {
   const {
@@ -11,6 +12,7 @@ const ModalPost = (props) => {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+
 
   const formik = useFormik({
       initialValues:{
@@ -32,7 +34,8 @@ const ModalPost = (props) => {
             .then(response => {
                 alert("Sukses di Inputkan");
                 //console.log(response);
-                formik.resetForm()
+                formik.resetForm();
+                window.location.reload();
             })
             .then(error => {
                 console.log(error)
@@ -96,4 +99,4 @@ const ModalPost = (props) => {
   );
 }
 
-export default ModalPost;
+export default withRouter(ModalPost);

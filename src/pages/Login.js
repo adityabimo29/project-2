@@ -82,7 +82,7 @@ class Login extends React.Component {
                 />
               </FormGroup>
 
-              <Button className='mt-2' color="success">Register</Button>
+              <Button className='mt-2' color="success">Login</Button>
             </Form>
           </Col>
       </Row>

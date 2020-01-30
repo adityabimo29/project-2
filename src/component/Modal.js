@@ -32,7 +32,7 @@ const formik = useFormik({
 
           })
           .then(response => {
-              alert("Sukses di Inputkan");
+              alert("Sukses di Dirubah");
               //console.log(response);
               formik.resetForm();
               window.location.reload();
