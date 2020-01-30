@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import Api from './pages/Api';
+import Api from './pages/Free';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Api />, document.getElementById('root'));

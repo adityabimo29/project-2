@@ -24,16 +24,6 @@ export default class Api extends Component {
     }
    
 
-    // componentDidMount(){
-    //     fetch('https://pokeapi.co/api/v2/pokemon/rattata/')
-    //     .then((response) => {
-    //         return response.json();
-    //     })
-    //     .then((myJson) => {
-    //         console.log(myJson);
-    //     });
-    // }
-
     //Register
     //Login
     //Home

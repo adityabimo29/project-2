@@ -8,7 +8,7 @@ import Modalia from './Modal';
 
 export default function Cardy(props) {
 
-    const {name,id,avatar,handleDelete,total,handlePut} = props ;
+    const {name,id,avatar,handleDelete,total,old} = props ;
     
     
     return (
@@ -19,8 +19,8 @@ export default function Cardy(props) {
             <CardText className='text-center'>Your ID is : {id}</CardText>
             <Row>
                 <Col md={6}>
-                {/* <Modalia totalia={total} id={id} curName={name} curAvatar={avatar} /> */}
-                <Button color="warning" onClick={handlePut} id={id}  className='btn-block'>Edit</Button>
+                <Modalia totalia={total} id={id} curName={name} curAvatar={avatar} old={old} />
+                {/* <Button color="warning" onClick={handlePut} id={id}  className='btn-block'>Edit</Button> */}
                 </Col>
                 <Col md={6}>
                 <Button color="danger" onClick={handleDelete} id={id} className='btn-block' >Delete</Button>
