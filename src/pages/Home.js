@@ -12,23 +12,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const items = [
   {
-    src: 'https://images.pexels.com/photos/1546898/pexels-photo-1546898.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: process.env.REACT_APP_IMAGES1,
     altText: 'Slide 1',
     caption: ''
   },
   {
-    src: 'https://images.pexels.com/photos/2563129/pexels-photo-2563129.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: process.env.REACT_APP_IMAGES2,
     altText: 'Slide 2',
     caption: ''
   },
   {
-    src: 'https://images.pexels.com/photos/374811/pexels-photo-374811.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: process.env.REACT_APP_IMAGES3,
     altText: 'Slide 3',
     caption: ''
   }
 ];
 
 const Home = (props) => {
+  console.log(process.env.REACT_APP_IMAGES1);
+  
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

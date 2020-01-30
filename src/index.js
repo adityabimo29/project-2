@@ -5,7 +5,7 @@ import Profile from './pages/Profile';
 import Home from './pages/Home'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Profile />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('root'));
 // ReactDOM.render(<Profile />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
