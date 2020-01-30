@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import '../App.css';
 
 import { Link } from 'react-router-dom';
 const MainNavBar = props => {
@@ -31,7 +32,11 @@ const MainNavBar = props => {
 
   return (
     <div>
-      <Navbar color='light' light expand='md'>
+      <Navbar
+        style={{ backgroundColor: '#263238', Color: 'white' }}
+        light
+        expand='md'
+      >
         <NavbarBrand tag={Link} to='/'>
           MainPage
         </NavbarBrand>
@@ -39,17 +44,32 @@ const MainNavBar = props => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
             <NavItem>
-              <NavLink tag={Link} to='/PageAbout'>
+              <NavLink
+                className='MyNv1'
+                style={{ color: 'white' }}
+                tag={Link}
+                to='/PageAbout'
+              >
                 PageAbout
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to='/PageProfile'>
+              <NavLink
+                className='MyNv1'
+                style={{ color: 'white' }}
+                tag={Link}
+                to='/PageProfile'
+              >
                 PageProfile
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle
+                className='MyNv1'
+                style={{ color: 'white' }}
+                nav
+                caret
+              >
                 Options
               </DropdownToggle>
               <DropdownMenu right>
@@ -73,19 +93,35 @@ const MainNavBar = props => {
           <Nav className='mr-6' navbar>
             {isLogin ? (
               <NavItem>
-                <NavLink tag={Link} to='/#' onClick={signOut}>
+                <NavLink
+                  className='MyNv1'
+                  style={{ color: 'white' }}
+                  tag={Link}
+                  to='/#'
+                  onClick={signOut}
+                >
                   Sign Out{' '}
                 </NavLink>
               </NavItem>
             ) : (
               <Fragment>
-                <NavItem>
-                  <NavLink tag={Link} to='SignIn'>
+                <NavItem className='NvItem'>
+                  <NavLink
+                    className='MyNv1'
+                    style={{ color: 'white' }}
+                    tag={Link}
+                    to='SignIn'
+                  >
                     SignIn
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to='/Register'>
+                  <NavLink
+                    className='MyNv1'
+                    style={{ color: 'white' }}
+                    tag={Link}
+                    to='/Register'
+                  >
                     SignUp
                   </NavLink>
                 </NavItem>

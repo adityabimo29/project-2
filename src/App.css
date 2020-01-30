@@ -50,3 +50,25 @@
   display: grid;
   grid-template-columns: '1fr 1fr 1fr';
 }
+
+
+.MyNv1:hover {
+  background-color: chartreuse;
+  color: yellowgreen
+}
+
+
+.navbar-light .navbar-nav .nav-link :hover {
+  color: yellowgreen;
+  color: yellowgreen
+}
+
+.Nvitem:hover {
+  background-color: chartreuse;
+  color: yellowgreen
+}
+
+.a.MyNv1.nav-link {
+  color: yellowgreen;
+  color: yellowgreen
+}

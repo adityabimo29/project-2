@@ -31,53 +31,51 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <Row>
+      <Row style={{ marginTop: '35px' }}>
         <Col lg={4}></Col>
 
-        <div className='MyMiddleCol'>
-          <Col lg={4}>
-            <Form onSubmit={this.handleSubmit}>
-              <h3 style={{ textAlign: 'center' }}>Please Register:</h3>
-              <FormGroup>
-                <Label for='Name'>Name</Label>
-                <Input
-                  type='text'
-                  name='name'
-                  id='Name'
-                  placeholder='Please Your Complete Name'
-                  onChange={this.handleChange}
-                  value={this.state.name}
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label for='exampleEmail'>Email</Label>
-                <Input
-                  type='email'
-                  name='email'
-                  id='exampleEmail'
-                  placeholder='something@idk.cool'
-                  onChange={this.handleChange}
-                  value={this.state.email}
-                />
-              </FormGroup>
+        <Col lg={4} className='MyMiddleCol'>
+          <Form onSubmit={this.handleSubmit}>
+            <h3 style={{ textAlign: 'center' }}>Please Register:</h3>
+            <FormGroup>
+              <Label for='Name'>Name</Label>
+              <Input
+                type='text'
+                name='name'
+                id='Name'
+                placeholder='Please Your Complete Name'
+                onChange={this.handleChange}
+                value={this.state.name}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for='exampleEmail'>Email</Label>
+              <Input
+                type='email'
+                name='email'
+                id='exampleEmail'
+                placeholder='something@idk.cool'
+                onChange={this.handleChange}
+                value={this.state.email}
+              />
+            </FormGroup>
 
-              <FormGroup>
-                <Label for='examplePassword'>Password</Label>
-                <br />
-                <Input
-                  type='password'
-                  name='password'
-                  id='examplePassword'
-                  placeholder='please input Password!'
-                  onChange={this.handleChange}
-                  value={this.state.password}
-                />
-              </FormGroup>
+            <FormGroup>
+              <Label for='examplePassword'>Password</Label>
+              <br />
+              <Input
+                type='password'
+                name='password'
+                id='examplePassword'
+                placeholder='please input Password!'
+                onChange={this.handleChange}
+                value={this.state.password}
+              />
+            </FormGroup>
 
-              <Button style={{ margin: '7px' }}>Submit</Button>
-            </Form>
-          </Col>
-        </div>
+            <Button style={{ margin: '7px' }}>Submit</Button>
+          </Form>
+        </Col>
 
         <Col lg={4}></Col>
       </Row>

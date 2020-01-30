@@ -55,7 +55,7 @@ class Login extends React.Component {
     console.log(this.props);
 
     return (
-      <Row>
+      <Row style={{ marginTop: '35px' }}>
         <Col lg={4}></Col>
 
         <Col lg={4} className='MyMiddleCol'>
