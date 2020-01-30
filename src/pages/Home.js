@@ -5,25 +5,24 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-  Container,
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const items = [
   {
-    src: 'https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    src: 'https://images.pexels.com/photos/1546898/pexels-photo-1546898.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 1',
-    caption: 'Slide 1'
+    caption: ''
   },
   {
     src: 'https://images.pexels.com/photos/2563129/pexels-photo-2563129.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 2',
-    caption: 'Slide 2'
+    caption: ''
   },
   {
     src: 'https://images.pexels.com/photos/374811/pexels-photo-374811.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     altText: 'Slide 3',
-    caption: 'Slide 3'
+    caption: ''
   }
 ];
 
@@ -55,14 +54,14 @@ const Home = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img src={item.src} alt={item.altText} style={{width: "100%"}}/>
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>
     );
   });
   return (
-    <Container>
-      <h1 style={{textAlign: "center"}}>Lockheed Second Team Project</h1>
+    <div>
+      <h1 style={{ textAlign: "center", margin: "10px", marginTop: "50px" }}>Lockheed Second Team Project</h1>
       <Carousel
       activeIndex={activeIndex}
       next={next}
@@ -73,7 +72,10 @@ const Home = (props) => {
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
-    </Container>
+    <h2 style={{textAlign: "center", marginTop: "30px"}}>
+      <a href="login">Login</a> to check out more!
+    </h2>
+    </div>
   );
 }
 
