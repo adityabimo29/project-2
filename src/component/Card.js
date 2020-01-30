@@ -13,10 +13,13 @@ export default function Cardy(props) {
     
     return (
         <Card key={id} className='my-4'>
-            <CardImg top width="100%" src={avatar} alt="Card image cap" />
+            <CardImg top width="100%" style={{maxHeight:"200px"}} src={avatar} alt="Card image cap" />
             <CardBody>
             <CardTitle className='text-center'>{name}</CardTitle>
-            <CardText className='text-center'>Your ID is : {id}</CardText>
+            <CardText className='left'>ID is : {id}</CardText>
+            <CardText className='text-left'>{old.country}</CardText>
+            <CardText className='text-left'>{old.city}</CardText>
+            <CardText className='text-left'>{old.email}</CardText>
             <Row>
                 <Col md={6}>
                 <Modalia totalia={total} id={id} curName={name} curAvatar={avatar} old={old} />

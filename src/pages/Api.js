@@ -105,7 +105,7 @@ export default class Api extends Component {
         .then(response => {
             alert("Sukses di Inputkan");
             this.setState({name:'',avatar:''})
-            this.fetchData()
+            this.fetchData();
             //console.log(response);
         })
         .then(error => {
