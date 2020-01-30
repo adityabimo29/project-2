@@ -52,7 +52,7 @@ export default class Profile extends Component {
 
     return (
       <div>
-        <h1 style={{ textAlign: "center", margin: "10px" }}>
+        <h1 style={{ textAlign: "center", margin: "10px", marginTop: "50px" }}>
           GET PROFILE FROM GITHUB
         </h1>
         <Container
@@ -64,7 +64,7 @@ export default class Profile extends Component {
             justifyContent: "center"
           }}
         >
-          <Card style={{width: "400px", alignItems: "center"}}>
+          <Card style={{width: "400px", alignItems: "center", margin: "15px", padding: "15px", boxShadow: "3px 3px 10px #000000"}}>
             <CardImg
               top
               width="100%"
@@ -84,7 +84,7 @@ export default class Profile extends Component {
               </CardSubtitle>
             </CardBody>
           </Card>
-          <Card style={{width: "400px", alignItems: "center"}}>
+          <Card style={{width: "400px", alignItems: "center", margin: "15px", padding: "15px", boxShadow: "3px 3px 10px #000000"}}>
             <CardImg
               top
               width="100%"
@@ -104,7 +104,7 @@ export default class Profile extends Component {
               </CardSubtitle>
             </CardBody>
           </Card>
-          <Card style={{width: "400px", alignItems: "center"}}>
+          <Card style={{width: "400px", alignItems: "center", margin: "15px", padding: "15px", boxShadow: "3px 3px 10px #000000"}}>
             <CardImg
               top
               width="100%"
