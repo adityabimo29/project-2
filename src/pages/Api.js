@@ -37,7 +37,7 @@ export default class Api extends Component {
     }
 
     fetchData() {
-        axios.get('http://5e313f3c576f9d0014d64535.mockapi.io/rac/users')
+        axios.get('https://5e313f3c576f9d0014d64535.mockapi.io/rac/users')
         .then(res => {
             if(res.status === 200){
             const data =  res.data ;
