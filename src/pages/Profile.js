@@ -79,9 +79,9 @@ export default class Profile extends Component {
               <CardSubtitle style={{ textAlign: "center" }}>
                 {item1.id}
               </CardSubtitle>
-              <CardSubtitle style={{ textAlign: "center" }}>
-                {item1.url}
-              </CardSubtitle>
+              <Button href={item2.url}>
+                Git Profile
+              </Button>
             </CardBody>
           </Card>
           <Card style={{width: "400px", alignItems: "center", margin: "15px", padding: "15px", boxShadow: "3px 3px 10px #000000"}}>
@@ -99,9 +99,9 @@ export default class Profile extends Component {
               <CardSubtitle style={{ textAlign: "center" }}>
                 {item2.id}
               </CardSubtitle>
-              <CardSubtitle style={{ textAlign: "center" }}>
-                {item2.url}
-              </CardSubtitle>
+              <Button href={item2.url}>
+                Git Profile
+              </Button>
             </CardBody>
           </Card>
           <Card style={{width: "400px", alignItems: "center", margin: "15px", padding: "15px", boxShadow: "3px 3px 10px #000000"}}>
@@ -119,9 +119,9 @@ export default class Profile extends Component {
               <CardSubtitle style={{ textAlign: "center" }}>
                 {item3.id}
               </CardSubtitle>
-              <CardSubtitle style={{ textAlign: "center" }}>
-                {item3.url}
-              </CardSubtitle>
+              <Button href={item2.url}>
+                Git Profile
+              </Button>
             </CardBody>
           </Card>
         </Container>
