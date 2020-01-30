@@ -1,24 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import MainNavBar from './components/MainNavBar';
+import PageProfile from './pages/PageProfile';
+import Register from './pages/Register';
+import SignIn from './pages/SignIn';
+import PageHome from './pages/PageHome';
 
 function App() {
+  const isLogin = JSON.parse(localStorage.getItem('status'));
+  console.log(isLogin);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <MainNavBar />
+        <Switch>
+          <Route exact path='/PageHome'>
+            <PageHome />
+          </Route>
+          <Route exact path='/PageProfile'>
+            <PageProfile />
+          </Route>
+          <Route exact path='/PageProfile'>
+            {isLogin ? <PageProfile /> : <Redirect to='/PageAbout' />}
+          </Route>
+          <Route exact path='/SignIn'>
+            <SignIn />
+          </Route>
+          <Route exact path='/Register'>
+            <Register />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
